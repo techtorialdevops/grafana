@@ -31,14 +31,27 @@ jobs:
         curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
         sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
-    - name: Create Namespace
-      run: kubectl create ns test
+    # - name: Create Namespace
+    #   run: kubectl create ns test
 
     - name: Install Helm
       run: |
         curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
         chmod +x get_helm.sh
         ./get_helm.sh
+    
+    - name: Clone Grafana
+      uses: GuillaumeFalourd/clone-github-repo-action@v2.3
+      with:
+        depth: 1
+        branch: 'main'
+        owner: 'techtorialdevops'
+        repository: 'Grafana'
+    
+    - name: Access cloned repo
+      run: |
+         cd Grafana
+         ls -la
 
     # - name: Deploy Helm Chart
     #   run: |
