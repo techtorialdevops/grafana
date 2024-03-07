@@ -53,8 +53,8 @@ jobs:
          cd Grafana
          ls -la
 
-    # - name: Deploy Helm Chart
-    #   run: |
-    #     helm repo add harbor https://helm.goharbor.io
-    #     helm uninstall my-harbor
-    #     helm install my-harbor harbor/harbor --version 1.14.0 -n harbor
+    - name: Deploy Helm Chart
+      run: |
+        helm repo add harbor https://helm.goharbor.io
+        helm uninstall my-harbor
+        helm upgrade my-harbor harbor/harbor -f values.yaml -f values-dev.yaml -n harbor
