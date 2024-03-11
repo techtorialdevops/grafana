@@ -24,7 +24,7 @@ jobs:
         aws-region: us-east-2
 
     - name: Update kubeconfig
-      run: aws eks update-kubeconfig --region us-east-2 --name techtorial-eks-eYiIJeXz
+      run: aws eks update-kubeconfig --region us-east-2 --name techtorial-eks-w7FudZ65
       
     - name: Install Kubectl
       run: |
