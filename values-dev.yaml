@@ -1,15 +1,15 @@
-# service:
-#   enabled: true
-#   type: LoadBalancer
-#   loadBalancerIP: ""
-#   loadBalancerClass: ""
-#   loadBalancerSourceRanges: []
-#   port: 80
-#   targetPort: 3000
-#     # targetPort: 4181 To be used with a proxy extraContainer
-#   ## Service annotations. Can be templated.
-#   annotations: {}
-#   labels: {}
-#   portName: service
-#   # Adds the appProtocol field to the service. This allows to work with istio protocol selection. Ex: "http" or "tcp"
-#   appProtocol: ""
+service:
+  enabled: true
+  type: LoadBalancer
+  loadBalancerIP: ""
+  loadBalancerClass: ""
+  loadBalancerSourceRanges: []
+  port: 80
+  targetPort: 3000
+    # targetPort: 4181 To be used with a proxy extraContainer
+  ## Service annotations. Can be templated.
+  annotations: {}
+  labels: {}
+  portName: service
+  # Adds the appProtocol field to the service. This allows to work with istio protocol selection. Ex: "http" or "tcp"
+  appProtocol: ""
